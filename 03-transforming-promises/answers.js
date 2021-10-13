@@ -50,6 +50,9 @@ function squarePromise(numberPromise) {
  */
 function squarePromiseOrZero(promise) {
   return squarePromise(promise).catch((value) => {
+    // return new Promise((resolve, reject) => {
+    //   resolve(0);
+    // });
     return 0;
   });
 }

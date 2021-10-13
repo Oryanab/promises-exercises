@@ -36,7 +36,7 @@ function squarePromise(numberPromise) {
       if (!isNaN(result)) {
         resolve(result * result);
       } else {
-        reject(` "Cannot convert ${result} to a number!"`);
+        reject(`Cannot convert '${result}' to a number!`);
       }
     });
   });
@@ -50,10 +50,9 @@ function squarePromise(numberPromise) {
  */
 function squarePromiseOrZero(promise) {
   return squarePromise(promise).catch((value) => {
-    // return new Promise((resolve, reject) => {
-    //   resolve(0);
-    // });
-    return 0;
+    return new Promise((resolve, reject) => {
+      resolve(0);
+    });
   });
 }
 
